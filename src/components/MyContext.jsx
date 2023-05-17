@@ -9,7 +9,7 @@ export const MyContextProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentResponse, setCurrentResponse] = useState();
-  const [responses, setResponses] = useState([]);
+  const [responses, setResponses] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,15 +30,13 @@ export const MyContextProvider = ({ children }) => {
   const addResponse = (response) => {
     response = response;
     setCurrentResponse(response);
-
-    setResponses(currentResponse);
   };
 
   useEffect(() => {
+    setResponses([...responses, currentResponse]);
+    console.log(responses)
 
   }, [currentQuestion]);
-
-  console.log(responses);
 
   const contextValue = {
     questions: questions,

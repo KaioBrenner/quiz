@@ -11,12 +11,11 @@ function App() {
     responses,
   } = useContext(MyContext);
 
-  useEffect(() => {
-    setResponses(1);
-  }, [currentQuestion]);
+  
 
   return (
     <div className="w-[500px] bg-white rounded-md text-3xl p-3">
+      <p>{responses}</p>
       <Question
         questions={questions}
         currentQuestion={currentQuestion}

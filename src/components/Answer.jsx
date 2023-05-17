@@ -14,6 +14,9 @@ const Answer = ({ answer, index }) => {
         onClick={() => {
           handleCurrentQuestion();
           addResponse(index);
+
+          // Acesso do feature de cada resposta
+          // console.log(questions[currentQuestion].answers[index].feature)
         }}
         key={index}
       >
